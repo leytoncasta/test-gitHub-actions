@@ -15,10 +15,10 @@ Jobs:
 # -----------Steps del Job anterior---------------
     # Se definen los pasos del job 
     steps:
-      - name: checkout repositorio # Nombre del primer paso
-        uses: actions/checkout@v2 # deja el código del repo en una maquina runner
+    - name: checkout repositorio # Nombre del primer paso
+      uses: actions/checkout@v2 # deja el código del repo en una maquina runner
 
-      - name: Imprimir un saludo # Nombre del script bash a ejecutar
-        run: |
-          echo "Hola, esto es una prueba en gitHub" # Ejecución del script 
+    - name: Imprimir un saludo # Nombre del script bash a ejecutar
+      run: |
+        echo "Hola, esto es una prueba en gitHub" # Ejecución del script 
 
