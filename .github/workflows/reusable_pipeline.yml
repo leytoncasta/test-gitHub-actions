@@ -1,0 +1,33 @@
+# Aquí pongo el nombre del workflow
+name: My first reusable pipeline with github
+
+# ------------------------------------------------
+# Especifico el trigger para el workflow
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "node version"
+        required: false
+        default: 14
+        type: number
+# ------------------------------------------------
+# Especifico los Jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest # ambente de linux donde correrá el job
+# -----------Steps del Job anterior---------------
+    # Se definen los pasos del job 
+    steps:
+      - name: checkout repositorio # Nombre del primer paso
+        uses: actions/checkout@v2 # deja el código del repo en una maquina runner
+
+      - name: configurar Node.js # Nombre del segundo paso
+        uses: actions/setup-node@v2 #Configura la máquina con node
+        with:
+          node-version: ${{ inputs.node-version }} # settea la versión de node que es llamada con este pipeline
+
+      - name: Imprimir un mensaje # Nombre del script bash a ejecutar
+        run: |
+          echo "Hola, ejecuté un pipeline reusable en la rama ${{inputs.branch}}" 
+         # Ejecución del script 
