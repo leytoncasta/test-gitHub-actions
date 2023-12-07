@@ -9,9 +9,9 @@ on:
       - '*' # Cualquier Rama
 # ------------------------------------------------
 # Especifico los Jobs
-Jobs:
+jobs:
   build:
-    runs-on: ubunti-lastest # ambente de linux donde correrá el job
+    runs-on: ubuntu-latest # ambente de linux donde correrá el job
 # -----------Steps del Job anterior---------------
     # Se definen los pasos del job 
     steps:
@@ -20,5 +20,5 @@ Jobs:
 
       - name: Imprimir un saludo # Nombre del script bash a ejecutar
         run: |
-          echo "Hola, esto es una prueba en gitHub" # Ejecución del script 
+          echo "Hola, esto es una prueba en gitHub para mostrar" # Ejecución del script 
 
