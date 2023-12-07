@@ -11,7 +11,7 @@ on:
 # Especifico los Jobs
 jobs:
   build:
-    runs-on: ubunti-lastest # ambente de linux donde correrá el job
+    runs-on: ubuntu-lastest # ambente de linux donde correrá el job
 # -----------Steps del Job anterior---------------
     # Se definen los pasos del job 
     steps:
